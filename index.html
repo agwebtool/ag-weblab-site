@@ -5,10 +5,171 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>AG Web Lab — Websites for Small Businesses</title>
   <meta name="description" content="AG Web Lab builds fast, modern websites for shops, salons, restaurants and tutors." />
+  <style>
+    :root{--bg:#0f1724;--card:#0b1220;--accent:#06b6d4;--muted:#94a3b8;--white:#e6eef6}
+    *{box-sizing:border-box}
+    body{margin:0;font-family:Inter,ui-sans-serif,system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;background:linear-gradient(180deg,#061021 0%, #081426 100%);color:var(--white);line-height:1.5}
+    .container{max-width:1000px;margin:32px auto;padding:24px}
+    header{display:flex;align-items:center;justify-content:space-between}
+    .brand{display:flex;gap:16px;align-items:center}
+    .logo{width:56px;height:56px;border-radius:12px;background:linear-gradient(135deg,var(--accent),#7c3aed);display:flex;align-items:center;justify-content:center;font-weight:700}
+    h1{margin:0;font-size:28px}
+    p.lead{color:var(--muted);margin:8px 0 0}
+    .cta{display:flex;gap:12px}
+    .btn{background:var(--accent);color:#022;padding:10px 14px;border-radius:10px;text-decoration:none;font-weight:600}
+    .ghost{border:1px solid rgba(255,255,255,0.06);padding:10px 14px;border-radius:10px;color:var(--white);text-decoration:none}
+    .grid{display:grid;grid-template-columns:repeat(12,1fr);gap:18px;margin-top:28px}
+    .card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:18px;border-radius:12px}
+    .hero{grid-column:span 7}
+    .contact-card{grid-column:span 5}
+    .services{display:flex;gap:12px;margin-top:18px}
+    .service{background:rgba(255,255,255,0.02);padding:12px;border-radius:10px;flex:1}
+    .projects-section{margin-top:30px}
+    .projects{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;margin-top:12px}
+    .proj img{width:100%;border-radius:8px;height:150px;object-fit:cover}
+    footer{margin-top:40px;color:var(--muted);font-size:13px;text-align:center;padding-bottom:40px}
+    .tag{background:rgba(255,255,255,0.03);padding:6px 8px;border-radius:8px;font-size:12px}
+    @media(max-width:800px){.hero{grid-column:span 12}.contact-card{grid-column:span 12}}
+    /* small helper styles for contact links */
+    .contact-row{display:flex;gap:8px;align-items:center}
+    .contact-row a{color:var(--white);text-decoration:none}
+    .about{margin-top:18px;color:var(--muted)}
+    .skills{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+    .skill{background:rgba(255,255,255,0.03);padding:6px 10px;border-radius:999px;font-size:13px}
+    .badge{display:inline-block;padding:6px 10px;border-radius:10px;background:rgba(255,255,255,0.02);font-weight:600}
+  </style>
 </head>
 <body>
-  <!-- The portfolio full content is stored in canvas; inserting placeholder -->
-  <h1>Your AG Web Lab Website</h1>
-  <p>This is the exported placeholder. Please replace with full HTML from canvas if needed.</p>
+  <div class="container">
+    <header>
+      <div class="brand">
+        <div class="logo">Ag</div>
+        <div>
+          <div style="font-size:13px;color:var(--muted)">Hi, I'm</div>
+          <h1>AG Web Lab — Websites for Small Businesses</h1>
+          <div class="tag">Websites for small businesses</div>
+        </div>
+      </div>
+      <nav class="cta">
+        <a class="ghost" href="#projects">Projects</a>
+        <a class="btn" href="#contact">Hire me</a>
+      </nav>
+    </header>
+
+    <div class="grid">
+      <section class="card hero">
+        <h2 style="margin-top:0">I build fast, modern websites for shops, salons & tutors</h2>
+        <p class="lead">Simple, affordable websites that help local businesses get customers — WhatsApp orders, booking, menus and Google-ready pages.</p>
+
+        <div class="services">
+          <div class="service">
+            <div style="font-weight:700">Business websites</div>
+            <div style="font-size:13px;color:var(--muted)">Fast single-page sites with contact & map</div>
+          </div>
+          <div class="service">
+            <div style="font-weight:700">Online menus & bookings</div>
+            <div style="font-size:13px;color:var(--muted)">WhatsApp ordering or simple booking forms</div>
+          </div>
+          <div class="service">
+            <div style="font-weight:700">Speed & SEO</div>
+            <div style="font-size:13px;color:var(--muted)">Optimised for Google and quick loading</div>
+          </div>
+        </div>
+
+        <div style="margin-top:16px;display:flex;gap:10px">
+          <a class="btn" href="#contact">Get a website — ₹2,000</a>
+          <a class="ghost" href="#projects">See demos</a>
+        </div>
+
+        <div class="about">
+          <div style="font-weight:700">About me</div>
+          <div style="margin-top:6px">AG Web Lab builds practical websites for local businesses. I use HTML, CSS, JavaScript and WordPress depending on the customer's needs. I focus on fast delivery and clear pricing.</div>
+
+          <div class="skills">
+            <div class="skill">HTML</div>
+            <div class="skill">CSS</div>
+            <div class="skill">JavaScript</div>
+            <div class="skill">React (optional)</div>
+            <div class="skill">WordPress</div>
+          </div>
+        </div>
+      </section>
+
+      <aside class="card contact-card" id="contact">
+        <h3 style="margin-top:0">Contact & Pricing</h3>
+        <div style="font-weight:700">Starter website — ₹2,000</div>
+        <div style="font-size:13px;color:var(--muted);margin-bottom:10px">(Single page, responsive, WhatsApp link, Google Maps)</div>
+
+        <div class="contact-row" style="margin-bottom:8px">
+          <div class="badge">WhatsApp</div>
+          <a href="https://wa.me/917806950815" target="_blank">Replace PHONE_NUMBER with your number</a>
+        </div>
+        <div class="contact-row" style="margin-bottom:8px">
+          <div class="badge">Email</div>
+          <a href="mailto:contactagweblab@gmail.com">contactagweblab@gmail.com</a>
+        </div>
+        <div class="contact-row" style="margin-bottom:14px">
+          <div class="badge">Location</div>
+          <div style="color:var(--muted)">Your City, India</div>
+        </div>
+
+        <div style="margin-top:8px">
+          <div style="font-weight:700">What I need to start</div>
+          <ul style="color:var(--muted)">
+            <li>Logo or name</li>
+            <li>Menu or service list</li>
+            <li>3 photos (phone photos are fine)</li>
+            <li>Contact number & address</li>
+          </ul>
+        </div>
+
+        <div style="margin-top:12px">
+          <a class="btn" href="mailto:contactagweblab@gmail.com">Email me</a>
+        </div>
+      </aside>
+    </div>
+
+    <section class="card projects-section" id="projects">
+      <h3 style="margin:0">Sample demos — ready to reuse</h3>
+      <p class="lead">Click any demo to view the template or ask me to customise it for your business.</p>
+
+      <div class="projects">
+        <div class="proj card">
+          <img src="https://via.placeholder.com/800x450?text=Restaurant+Demo" alt="Restaurant demo">
+          <div style="margin-top:8px;font-weight:700">Restaurant / Cafe</div>
+          <div style="font-size:13px;color:var(--muted)">Menu, WhatsApp order, Google Map, daily special section</div>
+        </div>
+
+        <div class="proj card">
+          <img src="https://via.placeholder.com/800x450?text=Salon+Demo" alt="Salon demo">
+          <div style="margin-top:8px;font-weight:700">Salon / Spa</div>
+          <div style="font-size:13px;color:var(--muted)">Booking form, price list, service gallery</div>
+        </div>
+
+        <div class="proj card">
+          <img src="https://via.placeholder.com/800x450?text=Tutor+Demo" alt="Tutor demo">
+          <div style="margin-top:8px;font-weight:700">Tutor / Coaching</div>
+          <div style="font-size:13px;color:var(--muted)">Class schedule, registration form, teacher profiles</div>
+        </div>
+      </div>
+
+    </section>
+
+    <footer>
+      <div>Want this exact website for your shop? Replace the placeholder text and images, update your WhatsApp link and upload to any host (GitHub Pages / Netlify / Vercel).</div>
+      <div style="margin-top:8px">Made with ❤️ by AG Web Lab</div>
+    </footer>
+  </div>
+
+  <script>
+    // Small clipboard helper: copy email/WA
+    document.addEventListener('click', e => {
+      if(e.target.matches('[data-copy]')){
+        navigator.clipboard.writeText(e.target.dataset.copy).then(()=>{
+          alert('Copied to clipboard')
+        })
+      }
+    })
+  </script>
 </body>
 </html>
