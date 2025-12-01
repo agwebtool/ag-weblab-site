@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Restaurant — Ultra Demo | AG Web Lab</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg1: #0b1020; --card: rgba(255,255,255,0.03);
+    --accent1: #ff8a65; --accent2:#f472b6; --muted:#9aa6b2; --white:#f3f7fb;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;font-family:Inter,system-ui,Arial;background:linear-gradient(180deg,var(--bg1) 0%, #071028 100%);color:var(--white);-webkit-font-smoothing:antialiased}
+  a{color:inherit}
+  header{display:flex;align-items:center;justify-content:space-between;padding:20px 36px;position:sticky;top:0;background:linear-gradient(180deg,rgba(255,255,255,0.02),transparent);backdrop-filter:blur(6px);z-index:50}
+  .brand{display:flex;gap:14px;align-items:center}
+  .logo{width:52px;height:52px;border-radius:12px;background:linear-gradient(135deg,var(--accent1),var(--accent2));display:flex;align-items:center;justify-content:center;font-weight:800;font-size:18px;color:#031223;box-shadow:0 8px 30px rgba(0,0,0,0.6)}
+  nav{display:flex;gap:18px;align-items:center}
+  nav a{font-weight:700;text-decoration:none;opacity:0.95}
+  .hero{min-height:64vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:60px 20px;background-image:linear-gradient(180deg,rgba(0,0,0,0.45),rgba(0,0,0,0.45)),url('https://images.pexels.com/photos/594685/pexels-photo-594685.jpeg');background-size:cover;background-position:center}
+  .hero h1{font-size:48px;margin:0 0 14px;letter-spacing:0.2px;text-shadow:0 14px 40px rgba(2,6,23,0.7)}
+  .hero p{color:var(--muted);max-width:780px;margin:0 auto 20px}
+  .hero .cta{display:inline-flex;gap:12px;align-items:center;padding:12px 18px;border-radius:12px;background:linear-gradient(90deg,var(--accent1),var(--accent2));color:#031223;font-weight:800;text-decoration:none;box-shadow:0 12px 40px rgba(244,114,182,0.12);transform:translateY(0);transition:transform .18s ease}
+  .hero .cta:hover{transform:translateY(-4px) scale(1.02)}
+  main{max-width:1200px;margin:-60px auto 40px;padding:0 20px;position:relative;z-index:40}
+  .grid{display:grid;grid-template-columns:1fr 380px;gap:22px;align-items:start}
+  .card{background:var(--card);padding:22px;border-radius:16px;box-shadow:0 20px 60px rgba(2,6,23,0.6);backdrop-filter:blur(6px);overflow:hidden}
+  .menu-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}
+  .menu-item{border-radius:12px;overflow:hidden;background:linear-gradient(180deg,rgba(255,255,255,0.015),rgba(255,255,255,0.01));cursor:pointer;transition:transform .28s cubic-bezier(.2,.9,.3,1), box-shadow .28s}
+  .menu-item:hover{transform:translateY(-8px);box-shadow:0 30px 60px rgba(2,6,23,0.6)}
+  .menu-item img{width:100%;height:160px;object-fit:cover;display:block}
+  .meta{padding:12px}
+  .meta h3{margin:0 0 6px;font-size:16px}
+  .meta .price{font-weight:800;color:var(--accent1)}
+  .contact-card .label{font-size:13px;color:var(--muted);margin-bottom:6px}
+  .floating-order{position:fixed;right:20px;bottom:20px;background:linear-gradient(90deg,var(--accent1),var(--accent2));color:#031223;padding:12px 16px;border-radius:999px;font-weight:800;box-shadow:0 20px 60px rgba(244,114,182,0.12);z-index:80;text-decoration:none}
+  footer{padding:28px;text-align:center;color:var(--muted);margin-top:30px}
+  /* animations */
+  .fade-in{opacity:0;transform:translateY(10px);animation:fadeIn .7s forwards}
+  @keyframes fadeIn{to{opacity:1;transform:none}}
+  @media(max-width:900px){.grid{grid-template-columns:1fr}.hero{min-height:44vh}.menu-item img{height:140px}}
+</style>
+</head>
+<body>
+<header>
+  <div class="brand"><div class="logo">Ag</div><div><div style="font-size:12px;color:var(--muted)">AG Web Lab</div><div style="font-weight:800">Deluxe Restaurant Demo</div></div></div>
+  <nav><a href="index.html">Home</a><a href="#menu">Menu</a><a href="#contact">Contact</a></nav>
+</header>
+
+<section class="hero">
+  <div class="fade-in">
+    <h1>Flavours that make people talk</h1>
+    <p>Premium menus, quick WhatsApp ordering, daily specials and mouth-watering photography — perfect for local restaurants.</p>
+    <a class="cta" href="#menu">See the Menu</a>
+  </div>
+</section>
+
+<main>
+  <div class="grid">
+    <section class="card fade-in" id="menu">
+      <h2 style="margin-top:0">Our Chef's Picks</h2>
+      <p style="color:var(--muted)">Hand-picked crowd favorites — tap any item to start an order on WhatsApp.</p>
+      <div class="menu-grid" id="menuGrid">
+        <div class="menu-item fade-in" data-title="Grilled Chicken Meal">
+          <img src="https://images.pexels.com/photos/4109137/pexels-photo-4109137.jpeg" alt="Grilled Chicken">
+          <div class="meta"><h3>Grilled Chicken Meal</h3><div class="price">₹249</div></div>
+        </div>
+        <div class="menu-item fade-in" data-title="Margherita Pizza">
+          <img src="https://images.pexels.com/photos/803963/pexels-photo-803963.jpeg" alt="Pizza">
+          <div class="meta"><h3>Margherita Pizza</h3><div class="price">₹199</div></div>
+        </div>
+        <div class="menu-item fade-in" data-title="Chicken Biryani">
+          <img src="https://images.pexels.com/photos/1639567/pexels-photo-1639567.jpeg" alt="Biryani">
+          <div class="meta"><h3>Chicken Biryani</h3><div class="price">₹229</div></div>
+        </div>
+        <div class="menu-item fade-in" data-title="Veg Fried Rice">
+          <img src="https://images.pexels.com/photos/704569/pexels-photo-704569.jpeg" alt="Fried Rice">
+          <div class="meta"><h3>Veg Fried Rice</h3><div class="price">₹149</div></div>
+        </div>
+        <div class="menu-item fade-in" data-title="Shawarma Roll">
+          <img src="https://images.pexels.com/photos/1109197/pexels-photo-1109197.jpeg" alt="Shawarma">
+          <div class="meta"><h3>Shawarma Roll</h3><div class="price">₹99</div></div>
+        </div>
+        <div class="menu-item fade-in" data-title="Butter Naan & Curry">
+          <img src="https://images.pexels.com/photos/1639564/pexels-photo-1639564.jpeg" alt="Naan Curry">
+          <div class="meta"><h3>Butter Naan & Curry</h3><div class="price">₹179</div></div>
+        </div>
+      </div>
+    </section>
+
+    <aside class="card contact-card fade-in">
+      <h3 style="margin-top:0">Order & Contact</h3>
+      <div class="label">Starter website — ₹2,000</div>
+      <div style="margin-top:12px"><strong>WhatsApp</strong><div style="color:var(--muted)"><a href="https://wa.me/917806950815" style="color:var(--white)">Chat & Order</a></div></div>
+      <div style="margin-top:12px"><strong>Email</strong><div style="color:var(--muted)"><a href="mailto:contactagweblab@gmail.com" style="color:var(--white)">contactagweblab@gmail.com</a></div></div>
+      <div style="margin-top:16px"><strong>What I need</strong><ul style="color:var(--muted)"><li>Logo or name</li><li>Menu list</li><li>3 photos</li></ul></div>
+    </aside>
+  </div>
+</main>
+
+<a class="floating-order" href="https://wa.me/917806950815?text=I%20want%20to%20order">Order Now</a>
+<footer>Made with ❤️ by AG Web Lab</footer>
+
+<script>
+// click-to-order
+document.querySelectorAll('.menu-item').forEach(item=>{
+  item.addEventListener('click',()=>{
+    const title = item.dataset.title || item.querySelector('h3')?.innerText || 'Item';
+    const url = 'https://wa.me/917806950815?text=' + encodeURIComponent('I want to order: ' + title);
+    window.open(url,'_blank');
+  });
+});
+// small staggered reveal
+window.addEventListener('load',()=>{
+  document.querySelectorAll('.fade-in').forEach((el,i)=>{el.style.animationDelay=(0.06*i)+'s';el.classList.add('visible')});
+});
+</script>
+</body>
+</html>
